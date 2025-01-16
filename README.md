@@ -5,6 +5,8 @@ Creating a knowledge graph to unravel trends and relationships between patents, 
 
 ## NIH RePORTER API Call Information
 
+For more, specific, information on the NIH RePORTER API usage, refer to this PDF made by the creators of the database: https://api.reporter.nih.gov/documents/Data%20Elements%20for%20RePORTER%20Project%20API_V2.pdf
+
 #### Calling 'Publications'
 ###### Input Parameters:
     :param application_ids: user inputted application ids
