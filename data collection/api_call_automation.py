@@ -1,5 +1,5 @@
 """
-Title: api_call_automation
+Title: api_call_automation.py
 Author: Owen Sharpe
 Description: using the NIH RePORTER API class to automate a data extraction process from the API.
 """
