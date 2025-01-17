@@ -32,26 +32,19 @@ class NIHReporterAPI:
             print(f"Error: {e}")
             return None
 
-    def get_publications(self, application_ids=[], pmids=[], core_proj_nums=[], offset=0, limit=10,
-                         sort_field="core_project_nums"):
+    def get_publications(self, offset=0, limit=10, sort_field="appl_ids", **criteria):
         """
         calls the 'publications' search request of the NIH RePORTER API
-        :param application_ids: user inputted application ids
-        :param pmids: user inputted pubmed identifiers
-        :param core_proj_nums: user inputted core project numbers
-        :param limit: the specific publication to start at (e.g., 59 starts at publication #60)
         :param offset: amount of publications to grab (max 500)
+        :param limit: the specific publication to start at (e.g., 59 starts at publication #60)
         :param sort_field: sort the field by a criterion (should be a parameter in 'inc_fields')
+        :param criteria: a 'kwargs' parameter for user specified parameters to filter search results (info in README)
         :return: 'publications' api response call
         """
 
         # the 'publications' payload criteria (with user specified parameters)
         payload = {
-            "criteria": {
-                "appl_ids": application_ids,  # search for specific application ids
-                "pmids": pmids,  # search for specific pubmed identifiers
-                "core_project_nums": core_proj_nums  # search for specific project numbers
-            },
+            "criteria": criteria,
             "offset": offset,
             "limit": limit,
             "sort_field": sort_field,
